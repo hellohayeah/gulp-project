@@ -39,7 +39,7 @@ gulp.task('js', function() {
   return gulp.src('src/js/**/*.js')
     .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')})) // 出錯則顯示提示視窗，不中斷。
     .pipe(babel({
-      presets: ['@babel/env']
+      presets: ['env']
     }))
     .pipe(uglify())
     .pipe(gulp.dest('dev/js'))
